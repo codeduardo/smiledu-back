@@ -1,0 +1,14 @@
+CREATE DATABASE 
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(40),
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE payments (
+    id SERIAL PRIMARY KEY,
+    amount DECIMAL,
+    user_id INTEGER REFERENCES students(id),
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
